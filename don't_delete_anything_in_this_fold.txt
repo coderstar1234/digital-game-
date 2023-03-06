@@ -1,0 +1,10 @@
+Please don't delete anything from ".hidex_dont_delete_me" ！！！
+
+The files have lost may cause by one or some of the following reasons:
+
+1.Your phone have been reset;
+2.You have used cleanning apps to clean your phone;
+3.You have deleted your the folder name .hidex_dont_delete_me or the files inside it;
+4.You have removed or change your SD card
+
+Since your files only store in your device, it cannot be recover or back up, please keep in mind don't delete any files under the folder name .hidex_dont_delete_me of your device's root directory next time, or you can backup your files before factory resetting or changing to a new device.

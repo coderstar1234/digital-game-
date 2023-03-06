@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <script type="Mirielle/Shader" id="vertex-shader">
+        attribute vec4 aPos;
+        attribute vec2 aTexCoord;
+
+        uniform mat4 uProjectionMatrix;
+        uniform mat4 uModelMatrix;
+
+        varying vec2 vTexCoord;
+
+        void main() {
+            gl_Position = uProjectionMatrix * uModelMatrix * aPos;
+            vTexCoord = aTexCoord;
+        }
+    </script>
+    <script type="Mirielle/Shader" id="fragment-shader">
+        precision mediump float;
+
+        uniform sampler2D uTexture;
+        varying vec2 vTexCoord;
+
+        void main() {
+            gl_FragColor = texture2D(uTexture, vTexCoord);
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FlappyBird | Game</title>
+</head>
+<body>
+    <section id="game-area">
+        <audio src="https://raw.githubusercontent.com/V-Play/FlappyBird/master/assets/audio/sfx_die.wav" id="die-aud"></audio>
+        <audio src="https://raw.githubusercontent.com/V-Play/FlappyBird/master/assets/audio/sfx_hit.wav" id="hit-aud"></audio>
+        <audio src="https://raw.githubusercontent.com/V-Play/FlappyBird/master/assets/audio/sfx_point.wav" id="point-aud"></audio>
+        <audio src="https://raw.githubusercontent.com/V-Play/FlappyBird/master/assets/audio/sfx_wing.wav" id="wing-aud"></audio>
+        <section id="splash">
+            <h2><span style="color:aqua">Melle</span><span style="color:beige;">Studio</span></h2>
+            <small style="color:aliceblue">Loading</small>
+        </section>
+        <canvas id="gl" tabindex="1"></canvas>
+        <p id="score"></p>
+    </section>
+</body>
+</html>
